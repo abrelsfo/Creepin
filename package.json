@@ -1,0 +1,55 @@
+{
+  "name": "creepin",
+  "version": "0.0.0",
+  "description": "Open user profiles and store favorites",
+  "license": "MIT",
+  "repository": "abrelsfo/creepin",
+  "author": {
+    "name": "abrelsfo",
+    "email": "alexbrelsford@gmail.com",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/abrelsfo/creepin/issues"
+  },
+  "bin": {
+    "creepin": "cli.js"
+  },
+  "engines": {
+    "node": ">=5.7.0"
+  },
+  "scripts": {
+    "test": "xo && ava",
+    "ava": "ava"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "Alex"
+  ],
+  "dependencies": {
+    "jsonfile": "^2.2.3",
+    "remove_index": "^0.0.1",
+    "fs": "^0.0.2",
+    "in-array": "^0.1.0",
+    "home-path": "^1.0.3",
+    "meow": "^3.7.0",
+    "opn": "^4.0.1",
+    "update-notifier": "^0.6.1"
+  },
+  "devDependencies": {
+    "ava": "^0.12.0",
+    "xo": "^0.12.1",
+    "eslint-config-xo-space": "^0.8.0"
+  },
+  "xo": {
+    "space": true,
+    "eslintConfig": {
+      "extends": "xo-space"
+    }
+  }
+}
