@@ -100,7 +100,6 @@ Examples
    abrelsfo: abrelsfo
    dawsonbotsford: dawsonbotsford
 
-
   $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s
    Stored stackoverflow for later
    stackoverflow is the handle and the url is the profile
