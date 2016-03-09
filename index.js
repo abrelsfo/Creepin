@@ -75,19 +75,19 @@ function handleOrProfile(input, flags) {
 
 		for (i = 0; i < flags.length; i++){	//set truth value of flags
 			switch (flags[i].toLowerCase()) {
-				case '-g':	//github
+				case 'g':	//github
 					github();
 					break;
-				case '-n':	//npm
+				case 'n':	//npm
 					npm();
 					break;
-				case '-u':	//url
+				case 'u':	//url
 					url();
 					break;
-				case '-s':	//save profile
+				case 's':	//save profile
 				 	addProfile();
 					break;
-				case '-r':	//remove profile from list
+				case 'r':	//remove profile from list
 					removeProfile();
 					break;
 				default:  //state something is wrong

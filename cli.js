@@ -51,11 +51,4 @@ var cli = meow([
 
 updateNotifier({pkg: cli.pkg}).notify();
 
-if (inArray(['-n', '-g', '-u', '-s', '-r'], cli.input[0].toLowerCase())) {
-	console.error('Creepin expected first input to be profile, received flag');
-	console.log(cli.help);
-	process.exit(1);
-}
-
-console.log(cli.input);
-creepin(cli.input, cli.flags);
+creepin(cli.input, Object.keys(cli.flags));
