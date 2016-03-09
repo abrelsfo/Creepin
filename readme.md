@@ -19,7 +19,7 @@ $ npm install --save creepin
 Usage
   $ creepin([input], [flags])
 
-	$ creepin(['abrelsfo', '-g'], ['-n'])
+	$ creepin(['abrelsfo'], ['-g', '-n'])
 	 opens user profile for abrelsfo on Github and npm
 
 ```
