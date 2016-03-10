@@ -1,1 +1,0 @@
-atom,cli.js,index.js,package.json,readme.md,test.js
