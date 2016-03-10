@@ -1,6 +1,6 @@
 {
   "name": "creepin",
-  "version": "0.1.4",
+  "version": "0.2.4",
   "description": "Open user profiles and store favorites",
   "license": "MIT",
   "repository": "abrelsfo/creepin",
@@ -32,13 +32,14 @@
     "Alex"
   ],
   "dependencies": {
-    "jsonfile": "^2.2.3",
-    "remove_index": "^0.0.1",
-    "fs": "^0.0.2",
-    "in-array": "^0.1.0",
+    "chalk": "^1.1.1",
+    "fs": "0.0.2",
     "home-path": "^1.0.3",
+    "in-array": "^0.1.0",
+    "jsonfile": "^2.2.3",
     "meow": "^3.7.0",
     "opn": "^4.0.1",
+    "remove_index": "0.0.1",
     "update-notifier": "^0.6.1"
   },
   "devDependencies": {
