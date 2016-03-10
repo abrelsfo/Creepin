@@ -56,7 +56,7 @@ function getProfiles(input, flags) {	// check if profile db exists
 }
 
 function handleOrProfile(input, flags) {
-  if (input === undefined) {
+  if (input.length === 0 && flags[0] === 'l') {
     showProfiles();
   } else if (input.length === 1 && flags.length === 0) {
     profile = input[0];
