@@ -1,2 +1,2 @@
 var creepin = require('./index.js');
-creepin(['sindre', 'sindresorhus'], ['-s']);
+creepin(['sindre', 'sindresorhus'], ['g','s']);

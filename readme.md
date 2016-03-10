@@ -18,9 +18,11 @@ $ npm install --save creepin
 ```
 Usage
   $ creepin([input], [flags])
+    creepin takes two arrays as arguments, input and flags
 
-	$ creepin(['abrelsfo'], ['-g', '-n'])
+	$ creepin(['abrelsfo'], ['g', 'n'])
 	 opens user profile for abrelsfo on Github and npm
+   Note: You don't need the '-' when you aren't using the CLI
 
 ```
 
@@ -28,19 +30,17 @@ Usage
 
 ## API
 
-### creepin [handle] [profile] [flags]
+### creepin [input] [flags]
 
  If one of your arguments has a space then put it in "quotes"
 
-##### handle (optional)
+##### input (optional)
 
-If you provide a handle only, creepin will search the profiles for the corresponding profile.<br>
-If no profile is found then handle is treated as the profile.
+Input takes two arguments at most.
+ * Zero arguments and zero flags will just list the stored profiles.
+ * One argument will be interpreted as the profile or url that you want to open.
+ * Two arguments are only needed if you plan on saving them for later.  
 
-##### profile (optional)
-
-This is either the profile name or a url.<br>
-You only need a profile name for Github and npm.
 
 ##### flags (optional)
 
@@ -48,11 +48,12 @@ You only need a profile name for Github and npm.
 -n --> npm<br>
 -u --> any url<br>
 -s --> save profile for future use<br>
--l --> used as only only argument, lists the stored profiles<br>
+-l --> can be used as only argument, lists the stored profiles<br>
 -r --> removes stored profile from list<br>
 
 If you provide nothing then default is: -l<br>
 If you provide a handle then default is: -g<br>
+If you provide no profile/url and a flag other than -g then it will through an error
 
 <br>
 
@@ -64,11 +65,10 @@ $ npm install --global creepin
 
 ```
 Usage
-  $ creepin [handle] [profile/url] [flags]
+  $ creepin [input] [flags]
 
 Explanation
-  creepin evaluates the first argument as a handle and if it is not stored then
-  it evaluates it as a profile. It will then follow the flags to open the specified profiles
+  If you give two arguments in the input then the first one is evaluated as the handle for the second argument. The only time you really need two arguments is when you are saving a favorite for later.
 
 Flags
   -g --> Github
@@ -78,8 +78,10 @@ Flags
   -l --> used as only only argument, lists the stored profiles
   -r --> removes stored profile from list
 
-  No Arguments Default: -l
-  Some Arguments Default: -g
+  If you provide nothing then default is: -l
+  If you provide a handle then default is: -g
+  If you provide no profile/url and a flag other than -g then it will through an error
+
 
 Examples
   $ creepin "abrelsfo" -g -n
