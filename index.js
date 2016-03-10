@@ -25,33 +25,13 @@ function url() {	// open url
   opn(profile, {wait: false});
 }
 
-function checkDirectory(input, flags) {
-  if (!fs.existsSync(home + '/CreepinProfiles')) {
-    fs.mkdirSync(home + '/CreepinProfiles');
-  }
-  getProfiles(input, flags);
-}
-
-function getProfiles(input, flags) {	// check if profile db exists
-  fs.stat(home + '/CreepinProfiles/profiles.json', function (err) {
-    if (err === null) {	// file exists
-      jsonfile.readFile(home + '/CreepinProfiles/profiles.json', function (err, obj) {
-        if (err) {
-          throw (err);
-        }
-        profiles = obj;
-        handleOrProfile(input, flags);
-      });
-    } else if (err.code === 'ENOENT') {	// file doesn't exist
-      jsonfile.writeFile(home + '/CreepinProfiles/profiles.json', {}, {spaces: 2}, function (err) {
-        if (err) {
-          throw (err);
-        }
-        handleOrProfile(input, flags);
-      });
-    } else {	// something is wrong
-      console.log('Shit hit the fan: ', err.code);
+function getProfiles(input, flags) {
+  jsonfile.readFile('./profiles.json', function (err, obj) {
+    if (err) {
+      throw (err);
     }
+    profiles = obj;
+    handleOrProfile(input, flags);
   });
 }
 
@@ -100,7 +80,7 @@ function handleOrProfile(input, flags) {
 function removeProfile() {  // remove profile from profiles list
   if (profiles && handle in profiles) {	// if handle has been stored
     delete profiles[handle];
-    jsonfile.writeFile(home + '/CreepinProfiles/profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile('./profiles.json', profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }
@@ -112,7 +92,7 @@ function removeProfile() {  // remove profile from profiles list
 function addProfile() {	// join profiles and write to file
   if (profiles && !(handle in profiles) && !inArray(['-n', '-g', '-u', '-s', '-l', '-r'], profile.toLowerCase())) { // if user provided handle and profile
     profiles[handle] = profile;
-    jsonfile.writeFile(home + '/CreepinProfiles/profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile('./profiles.json', profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }
@@ -138,10 +118,10 @@ function showProfiles() {	// print profiles in sorted order
 
 module.exports = function (input, flags) {
   if (input.length === 0 && flags.length === 0) {
-    checkDirectory(input, ['l']);
+    getProfiles(input, ['l']);
   } else if (input.length > 0 && flags.length === 0) {
-    checkDirectory(input, ['g']);
+    getProfiles(input, ['g']);
   } else {
-    checkDirectory(input, flags);
+    getProfiles(input, flags);
   }
 };

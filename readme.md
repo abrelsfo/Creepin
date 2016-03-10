@@ -108,16 +108,6 @@ Examples
 
 ```
 
-## Coming Updates
-
-> As it currently stands creepin creates a folder in the home directory called CreepinProfiles and stores the profiles in profiles.json.
-
-> * I plan on changing that folder and file to be in the same folder that the module resides in.
-
-## Pull Requests
-
-> If you know how to do the coming update and want to do it feel free and send me a pull request. I don't know when I'll get around to updating this.
-
 ## Other Notes
 
 > Due to Windows issues I am not able to test this with ava and xo, therefore, ```npm test``` will fail. I am working on fixing this issue!

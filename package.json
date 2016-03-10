@@ -1,6 +1,6 @@
 {
   "name": "creepin",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Open user profiles and store favorites",
   "license": "MIT",
   "repository": "abrelsfo/creepin",
@@ -24,7 +24,8 @@
   },
   "files": [
     "index.js",
-    "cli.js"
+    "cli.js",
+    "profiles.json"
   ],
   "keywords": [
     "cli-app",
