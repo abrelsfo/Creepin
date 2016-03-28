@@ -19,7 +19,7 @@ var cli = meow([
 	'  -n --> npm',
 	'  -u --> any url',
 	'  -s --> save profile for future use',
-	'  -l --> used as only only argument, lists the stored profiles',
+	'  -l --> used as only argument, lists the stored profiles',
 	'  -r --> removes stored profile from list',
 	'',
 	'  No Arguments Default: -l',

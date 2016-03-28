@@ -8,6 +8,7 @@ var homePath = require('home-path');
 var home = homePath();
 var profiles = {};
 var profile = '';
+var directory;
 var handle = '';
 var keys = [];
 var i = 0;
@@ -25,8 +26,17 @@ function url() {	// open url
   opn(profile, {wait: false});
 }
 
+function getUserHome() {
+  return ;
+}
+
 function getProfiles(input, flags) {
-  jsonfile.readFile('./profiles.json', function (err, obj) {
+  if (process.platform === 'win32') {
+    directory = process.env['APPDATA']+ '/npm/node_modules/creepin/';
+  } else {
+    directory = '/usr/lib/nodejs/lib/node_modules/creepin/';
+  }
+  jsonfile.readFile(directory + 'profiles.json', function (err, obj) {
     if (err) {
       throw (err);
     }
@@ -80,7 +90,7 @@ function handleOrProfile(input, flags) {
 function removeProfile() {  // remove profile from profiles list
   if (profiles && handle in profiles) {	// if handle has been stored
     delete profiles[handle];
-    jsonfile.writeFile('./profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile(directory + 'profiles.json', profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }
@@ -92,7 +102,7 @@ function removeProfile() {  // remove profile from profiles list
 function addProfile() {	// join profiles and write to file
   if (profiles && !(handle in profiles) && !inArray(['-n', '-g', '-u', '-s', '-l', '-r'], profile.toLowerCase())) { // if user provided handle and profile
     profiles[handle] = profile;
-    jsonfile.writeFile('./profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile(directory + 'profiles.json', profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }
