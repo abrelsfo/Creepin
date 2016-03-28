@@ -84,6 +84,10 @@ Flags
 
 
 Examples
+  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s
+   Stored stackoverflow for later
+   stackoverflow is the handle and the url is the profile
+
   $ creepin "abrelsfo" -g -n
   	opens profile on github and npm
 
@@ -101,11 +105,6 @@ Examples
   $ creepin
    abrelsfo: abrelsfo
    dawsonbotsford: dawsonbotsford
-
-  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s
-   Stored stackoverflow for later
-   stackoverflow is the handle and the url is the profile
-
 ```
 
 ## Other Notes

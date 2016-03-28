@@ -26,6 +26,10 @@ var cli = meow([
 	'  Some Arguments Default: -g',
 	'',
 	'Examples',
+	'  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s',
+	'   Stored stackoverflow for later',
+	'   stackoverflow is the handle and the url is the profile',
+	'',
 	'  $ creepin "abrelsfo" -g -n',
 	'  	opens profile on github and npm',
 	'',
@@ -42,11 +46,8 @@ var cli = meow([
 	'',
 	'  $ creepin -l',
 	'  	abrelsfo: abrelsfo',
-	'   dawsonbotsford: dawsonbotsford',
-	'',
-	'  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s',
-	'   Stored stackoverflow for later',
-	'   stackoverflow is the handle and the url is the profile'
+	'   dawsonbotsford: dawsonbotsford'
+
 ]);
 
 updateNotifier({pkg: cli.pkg}).notify();
