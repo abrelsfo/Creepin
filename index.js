@@ -1,14 +1,11 @@
 'use strict';
-var fs = require('fs');
 var opn = require('opn');
+var path = require('path');
 var chalk = require('chalk');
 var inArray = require('in-array');
 var jsonfile = require('jsonfile');
-var homePath = require('home-path');
-var home = homePath();
 var profiles = {};
 var profile = '';
-var directory;
 var handle = '';
 var keys = [];
 var i = 0;
@@ -27,7 +24,7 @@ function url() {	// open url
 }
 
 function getProfiles(input, flags) {
-  jsonfile.readFile(__dirname + '/profiles.json', function (err, obj) {
+  jsonfile.readFile(path.join(__dirname, '/profiles.json'), function (err, obj) {
     if (err) {
       throw (err);
     }
@@ -81,7 +78,7 @@ function handleOrProfile(input, flags) {
 function removeProfile() {  // remove profile from profiles list
   if (profiles && handle in profiles) {	// if handle has been stored
     delete profiles[handle];
-    jsonfile.writeFile(__dirname + '/profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile(path.join(__dirname, '/profiles.json'), profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }
@@ -93,7 +90,7 @@ function removeProfile() {  // remove profile from profiles list
 function addProfile() {	// join profiles and write to file
   if (profiles && !(handle in profiles) && !inArray(['-n', '-g', '-u', '-s', '-l', '-r'], profile.toLowerCase())) { // if user provided handle and profile
     profiles[handle] = profile;
-    jsonfile.writeFile(__dirname + '/profiles.json', profiles, {spaces: 2}, function (err) {
+    jsonfile.writeFile(path.join(__dirname, '/profiles.json'), profiles, {spaces: 2}, function (err) {
       if (err) {
         throw (err);
       }

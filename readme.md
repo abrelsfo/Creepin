@@ -1,6 +1,7 @@
 # Creepin
 [![npm version](https://img.shields.io/npm/v/creepin.svg)](https://www.npmjs.com/package/creepin)
 [![npm download count](http://img.shields.io/npm/dm/creepin.svg?style=flat)](http://npmjs.org/creepin)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 > Creepin lets you open people profiles quickly and easily. It also lets you store your favorites for later with a handle of your choosing. This can also be used for quick access to your favorite websites all from the command line.
 

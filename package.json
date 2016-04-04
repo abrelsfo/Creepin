@@ -1,6 +1,6 @@
 {
   "name": "creepin",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "Open user profiles and store favorites",
   "license": "MIT",
   "repository": "abrelsfo/creepin",
@@ -19,8 +19,7 @@
     "node": ">=5.7.0"
   },
   "scripts": {
-    "test": "xo && ava",
-    "ava": "ava"
+    "test": "xo"
   },
   "files": [
     "index.js",
