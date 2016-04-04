@@ -80,7 +80,7 @@ Flags
 
   If you provide nothing then default is: -l
   If you provide a handle then default is: -g
-  If you provide no profile/url and a flag other than -g then it will through an error
+  If you provide a handle only and it is a favorite then it will default to: -u
 
 
 Examples

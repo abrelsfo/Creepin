@@ -24,6 +24,7 @@ var cli = meow([
 	'',
 	'  No Arguments Default: -l',
 	'  Some Arguments Default: -g',
+	'  If you provide a handle only and it is a favorite then it will default to: -u',
 	'',
 	'Examples',
 	'  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s',
