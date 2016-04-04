@@ -37,15 +37,15 @@ function getProfiles(input, flags) {
 }
 
 function handleOrProfile(input, flags) {
-  if (input.length === 0 && flags[0] === 'l') {
+  if (input.length === 0 && flags.length === 0) {
     showProfiles();
-  } else if (input.length === 1 && flags.length === 0) {
+  } else if (input.length === 1 && flags.length === 0 && Object.keys(profiles).indexOf(input[0]) === -1) {
     profile = input[0];
     github();
-  } else if (input.length === 2 && flags.length === 0) {
-    profile = input[1];
-    github();
   } else {
+    if (flags.length === 0) {
+      flags = ['u'];
+    }
     handle = input[0];
     profile = profiles[handle];	// get profile from file
     if (profile === undefined) {	// if profile wasn't in file then it was supplied as handle
@@ -118,11 +118,5 @@ function showProfiles() {	// print profiles in sorted order
 }
 
 module.exports = function (input, flags) {
-  if (input.length === 0 && flags.length === 0) {
-    getProfiles(input, ['l']);
-  } else if (input.length > 0 && flags.length === 0) {
-    getProfiles(input, ['g']);
-  } else {
-    getProfiles(input, flags);
-  }
+  getProfiles(input, flags);
 };
