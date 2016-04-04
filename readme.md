@@ -20,8 +20,8 @@ Usage
   $ creepin([input], [flags])
     creepin takes two arrays as arguments, input and flags
 
-	$ creepin(['abrelsfo'], ['g', 'n'])
-	 opens user profile for abrelsfo on Github and npm
+  $ creepin(['abrelsfo'], ['g', 'n'])
+    opens user profile for abrelsfo on Github and npm
    Note: You don't need the '-' when you aren't using the CLI
 
 ```
@@ -53,7 +53,7 @@ Input takes two arguments at most.
 
 If you provide nothing then default is: -l<br>
 If you provide a handle then default is: -g<br>
-If you provide no profile/url and a flag other than -g then it will through an error
+If you provide a handle only and it is a favorite then it will default to: -u
 
 <br>
 
