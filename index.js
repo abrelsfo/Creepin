@@ -34,7 +34,7 @@ function getProfiles(input, flags) {
 }
 
 function handleOrProfile(input, flags) {
-  if (input.length === 0 && flags.length === 0) {
+  if ((input.length === 0 && flags.length === 0) || flags[0] === 'l') {
     showProfiles();
   } else if (input.length === 1 && flags.length === 0 && Object.keys(profiles).indexOf(input[0]) === -1) {
     profile = input[0];

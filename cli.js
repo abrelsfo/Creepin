@@ -20,6 +20,7 @@ var cli = meow([
   '  -s --> save profile for future use',
   '  -l --> used as only argument, lists the stored profiles',
   '  -r --> removes stored profile from list',
+  '  -h --> help',
   '',
   '  No Arguments Default: -l',
   '  Some Arguments Default: -g',
@@ -27,29 +28,32 @@ var cli = meow([
   '',
   'Examples',
   '  $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s',
-  '   Stored stackoverflow for later',
-  '   stackoverflow is the handle and the url is the profile',
+  '     Stored stackoverflow for later',
+  '     stackoverflow is the handle and the url is the profile',
   '',
   '  $ creepin "abrelsfo" -g -n',
-  '  	opens profile on github and npm',
+  '     opens profile on github and npm',
   '',
   '  $ creepin "http://stackoverflow.com/users/5012922/sirparselot" -u',
-  '   opens link',
+  '     opens link',
   '',
   '  $ creepin -l',
-  '  	abrelsfo: abrelsfo',
-  '   dawsonbotsford: dawsonbotsford',
-  '   stackoverflow: http://stackoverflow.com/users/5012922/sirparselot',
+  '     abrelsfo: abrelsfo',
+  '     dawsonbotsford: dawsonbotsford',
+  '     stackoverflow: http://stackoverflow.com/users/5012922/sirparselot',
   '',
   '  $ creepin \'stackoverflow\' -r',
-  '   removed stackoverflow',
+  '     removed stackoverflow',
   '',
   '  $ creepin -l',
-  '  	abrelsfo: abrelsfo',
-  '   dawsonbotsford: dawsonbotsford'
+  '     abrelsfo: abrelsfo',
+  '     dawsonbotsford: dawsonbotsford'
 
 ]);
-
+if (cli.flags.h) {
+  console.log(cli.help);
+  process.exit(1);
+}
 updateNotifier({pkg: cli.pkg}).notify();
 
 creepin(cli.input, Object.keys(cli.flags));

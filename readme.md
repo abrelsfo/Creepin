@@ -51,6 +51,7 @@ Input takes two arguments at most.
 -s --> save profile for future use<br>
 -l --> can be used as only argument, lists the stored profiles<br>
 -r --> removes stored profile from list<br>
+-h --> help<br>
 
 If you provide nothing then default is: -l<br>
 If you provide a handle then default is: -g<br>
@@ -78,6 +79,7 @@ Flags
   -s --> save profile for future use
   -l --> used as only only argument, lists the stored profiles
   -r --> removes stored profile from list
+  -h --> help
 
   If you provide nothing then default is: -l
   If you provide a handle then default is: -g
@@ -86,31 +88,27 @@ Flags
 
 Examples
   $ creepin "stackoverflow" "http://stackoverflow.com/users/5012922/sirparselot" -s
-   Stored stackoverflow for later
-   stackoverflow is the handle and the url is the profile
+     Stored stackoverflow for later
+     stackoverflow is the handle and the url is the profile
 
   $ creepin "abrelsfo" -g -n
   	opens profile on github and npm
 
   $ creepin "http://stackoverflow.com/users/5012922/sirparselot" -u
-   opens link
+     opens link
 
   $ creepin -l
-   abrelsfo: abrelsfo
-   dawsonbotsford: dawsonbotsford
-   stackoverflow: http://stackoverflow.com/users/5012922/sirparselot
+     abrelsfo: abrelsfo
+     dawsonbotsford: dawsonbotsford
+     stackoverflow: http://stackoverflow.com/users/5012922/sirparselot
 
   $ creepin 'stackoverflow' -r
-   Removed stackoverflow
+     Removed stackoverflow
 
   $ creepin
-   abrelsfo: abrelsfo
-   dawsonbotsford: dawsonbotsford
+     abrelsfo: abrelsfo
+     dawsonbotsford: dawsonbotsford
 ```
-
-## Other Notes
-
-> Due to Windows issues I am not able to test this with ava and xo, therefore, ```npm test``` will fail. I am working on fixing this issue!
 
 ## License
 
